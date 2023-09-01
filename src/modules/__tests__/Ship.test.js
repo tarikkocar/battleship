@@ -1,4 +1,4 @@
-import Ship from "../ship";
+import Ship from "../Ship.js";
 
 describe("Ship tests", () => {
   let testShip;
