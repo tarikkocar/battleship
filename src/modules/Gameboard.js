@@ -1,5 +1,3 @@
-import Ship from "./Ship.js";
-
 export default class Gameboard {
   constructor() {
     this.board = Array.from({ length: 100 }, (_, index) => {
