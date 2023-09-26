@@ -5,11 +5,11 @@ export default class Player {
   constructor() {
     this.gameBoard = new Gameboard();
     this.fleet = [
-      { carrier: new Ship(5) },
-      { battleship: new Ship(4) },
-      { cruiser: new Ship(3) },
-      { submarine: new Ship(3) },
-      { destroyer: new Ship(2) },
+      new Ship(5),
+      new Ship(4),
+      new Ship(3),
+      new Ship(3),
+      new Ship(2),
     ];
   }
 
@@ -22,19 +22,6 @@ export default class Player {
     return false;
   }
 
-  // aiAttack(board) {
-  //   let randomX = Math.floor(Math.random() * 10);
-  //   let randomY = Math.floor(Math.random() * 10);
-  //   const result = board.receiveAttack(randomX, randomY);
-
-  //   if (result) {
-  //     board.receiveAttack(randomX, randomY);
-  //   } else {
-  //     this.aiAttack(board);
-  //   }
-  //   console.log(this.gameBoard.board[10 * randomY + randomX]);
-  // }
-
   aiAttack(board) {
     let randomX, randomY, result;
 
@@ -43,5 +30,18 @@ export default class Player {
       randomY = Math.floor(Math.random() * 10);
       result = board.receiveAttack(randomX, randomY);
     } while (!result);
+  }
+
+  aiPlacement() {
+    this.fleet.forEach((ship) => {
+      let placed = false;
+      while (!placed) {
+        const x = Math.floor(Math.random() * 10);
+        const y = Math.floor(Math.random() * 10);
+        const direction = Math.random() < 0.5 ? "horizontal" : "vertical";
+
+        placed = this.gameBoard.placeShip(x, y, ship, direction);
+      }
+    });
   }
 }

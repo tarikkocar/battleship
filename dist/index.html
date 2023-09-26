@@ -18,18 +18,32 @@
             <h1>Battleship</h1>
         </div>
         <div class="playground">
-            <div class="user-area">
-                <h2>Your board</h2>
-                <div class="user-board board">
+            <div class="game-boards">
+                <div class="user-area">
+                    <h2>Your board</h2>
+                    <div class="user-board board">
 
+                    </div>
+                </div>
+                <div class="enemy-area">
+                    <h2>Enemy's board</h2>
+                    <div class="enemy-board board">
+            
+                    </div>
                 </div>
             </div>
-            <div class="enemy-area">
-                <h2>Enemy's board</h2>
-                <div class="enemy-board board">
-                    
+            <div class="controls">
+                <div class="user-controls">
+                    <button class="rotate-btn">Rotate</button>
+                </div>
+                <div class="common-controls">
+                    <button class="start-btn hidden">Start</button>
+                </div>
+                <div class="enemy-controls">
+                    <button class="restart-btn hidden">Play Again</button>
                 </div>
             </div>
+            <div class="result hidden">You win</div>
         </div>
     </div>
 </body>
