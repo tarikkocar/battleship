@@ -1,4 +1,5 @@
 import Player from "./Player.js";
+import Logo from "../logo.svg";
 
 export default class Game {
   constructor() {
@@ -16,6 +17,10 @@ export default class Game {
   }
 
   initializeGame() {
+    const logo = document.querySelector("img");
+    logo.setAttribute("src", Logo);
+    logo.setAttribute("alt", "logo");
+
     this.renderUserBoard();
     this.renderEnemyBoard();
     this.computerPlayer.aiPlacement();
